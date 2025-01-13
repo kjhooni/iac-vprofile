@@ -19,8 +19,7 @@ env:
   BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
   AWS_REFION: ap-northeast-2
   EKS_CLUSTER: vprofile-eks
-  
-  jobs:
+jobs:
    terraform:
      name: "Apply terraform code changes"
      runs-on: ubuntu-latest
@@ -57,4 +56,4 @@ env:
 
        - name: Terraform plan status
          if: steps.plan.outcome == 'failure' 
-         run: exit 1
+         run: exit 1     
